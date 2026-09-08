@@ -1,0 +1,1 @@
+extracted_text = pdf_utils.extract_text_with_pdfplumber(file_path)
