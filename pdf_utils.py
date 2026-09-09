@@ -1,6 +1,8 @@
 import pdfplumber
 import PyPDF2
 
+
+# This function extracts text from a PDF file using the pdfplumber library.
 def extract_text_with_pdfplumber(path):
     text = ""
     with pdfplumber.open(path) as pdf:
@@ -11,7 +13,7 @@ def extract_text_with_pdfplumber(path):
     return text
 
 
-
+# This function extracts text from a PDF file using the PyPDF2 library.
 def extract_text_with_pypdf2(path):
     text = ""
     reader = PyPDF2.PdfReader(path)

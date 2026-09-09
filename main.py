@@ -10,15 +10,15 @@ root.geometry("800x600")
 label = tk.Label(root, text="PDF Reader + AI Summarizer + Voice", font=("Arial", 18)) # Creates a label widget with specified text and font
 label.pack()
 
-
+# This function is called when the "Upload PDF" button is clicked. It opens a file dialog to select a PDF file, extracts text from the selected PDF using the pdf_utils module, and displays the extracted text in a text box.
 def upload_pdf():
     file_path = filedialog.askopenfilename(
     title = "Select a PDF file",
     filetypes = [("PDF Files", "*.pdf"), ("Text Files", "*.txt"), ("All Files", "*.*")]
     )
     print("Selected file:", file_path)
-    # extracted_text = pdf_utils.extract_text_with_pdfplumber(file_path) # Calls the extract_text_with_pypdf2 function from pdf_utils.py to extract text from the selected PDF file
-    extracted_text = pdf_utils.extract_text_with_pypdf2(file_path)
+    extracted_text = pdf_utils.extract_text_with_pdfplumber(file_path) # Calls the extract_text_with_pypdf2 function from pdf_utils.py to extract text from the selected PDF file
+    # extracted_text = pdf_utils.extract_text_with_pypdf2(file_path)
     text_box.delete("1.0", tk.END) # Clears the text box before inserting new text
     text_box.insert("1.0", extracted_text) # Inserts the extracted text into the text box
 
