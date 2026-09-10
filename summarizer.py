@@ -41,7 +41,7 @@ def summarize_long_text(text, max_words=500, max_length=130, min_length=30):
     chunks = chunk_text(text, max_words=max_words)
     chunk_summaries = [summarize_chunk(c, max_length, min_length) for c in chunks]
     combined = " ".join(chunk_summaries)
-    if(len(combined.split()) > 500):
+    if(len(combined.split()) > 400):
         combined = summarize_chunk(combined, max_length=150, min_length=50)
     return combined
 
